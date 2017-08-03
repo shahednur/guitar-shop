@@ -1,5 +1,5 @@
 <?php 
-class Category{
+class CategoryDB{
     public function getCategorys(){
         $db = Database::getDB();
         
