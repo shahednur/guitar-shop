@@ -1,5 +1,5 @@
 <?php 
-class Product{
+class ProductDB{
     public static function getProductByCategory($category_id){
         $db = Database::getDB();
         
@@ -24,7 +24,7 @@ class Product{
                   WHERE productID = '$product_id'";
         $result = $db->query($query);
         $row = $result->fetch();
-        $category = Category::getCategory($row['categoryID']);
+        $category = CategoryDB::getCategory($row['categoryID']);
         $product = new Product($category,$row['productCode'],$row['productName'],$row['listPrice']);
         $product->setID($row['productID']);
         return $product;
